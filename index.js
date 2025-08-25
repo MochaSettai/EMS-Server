@@ -16,8 +16,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: "https://ems-frontend-two-lime.vercel.app",
-    credentials: true
+    origin: "https://ems-frontend-two-lime.vercel.app"
 }));
 app.use(express.json());
 app.use(express.static('public/uploads'))
