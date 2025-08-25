@@ -15,7 +15,10 @@ import connectToDatabase from './db/db.js';
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: "https://ems-frontend-two-lime.vercel.app",
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.static('public/uploads'))
 
