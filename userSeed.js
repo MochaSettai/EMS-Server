@@ -1,6 +1,8 @@
-import User from './model/user.model.js';
+import User from './models/user.model.js';
 import bcrypt from 'bcrypt';
 import connectToDatabase from './db/db.js';
+
+// Run "node --env-file=.env userSeed.js"
 
 const userRegister = async () => {
     connectToDatabase();
