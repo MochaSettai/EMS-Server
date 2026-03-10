@@ -10,7 +10,7 @@ const departmentSchema = new mongoose.Schema({
     updatedAt: {type: Date, default: Date.now}
 });
 
-// Cascade deletion middleware(document)
+// Cascade deletion middleware(document) //note the bug that when deleting employee it doesn't delete the user
 departmentSchema.pre("deleteOne", { document: true, query: false }, async function(next) {
     try {
         const employees = await Employee.find({ department: this._id });
